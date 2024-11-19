@@ -1,0 +1,37 @@
+# .dockerignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+
+# Git
+.git
+.gitignore
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local development
+*.env
+.env.*
+credentials/
+models/
+metrics/
+logs/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.docker
+
+# Other
+.DS_Store
+*.log

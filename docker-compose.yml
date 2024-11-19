@@ -1,0 +1,21 @@
+# docker-compose.yml
+# version: '3.8'
+
+services:
+  xgboost-training:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./models:/app/models
+      - ./metrics:/app/metrics
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/google-credentials.json
+    command: [
+      "--n_estimators=100",
+      "--max_depth=3",
+      "--learning_rate=0.1",
+      "--subsample=0.8",
+      "--model-dir=/app/models",
+      "--bucket-name=${BUCKET_NAME}"
+    ]
